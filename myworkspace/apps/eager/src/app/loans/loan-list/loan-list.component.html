@@ -1,0 +1,12 @@
+<div class="page-container">
+  <h1>Loans</h1>
+  <p>Explore your loan details and manage repayments here.</p>
+
+  <div class="loan-list" *ngFor="let loan of loans">
+    <div class="loan-item">
+      <span class="loan-description">{{ loan.description }}</span>
+      <span class="loan-amount">${{ loan.amount }}</span>
+      <span class="loan-status">{{ loan.status }}</span>
+    </div>
+  </div>
+</div>

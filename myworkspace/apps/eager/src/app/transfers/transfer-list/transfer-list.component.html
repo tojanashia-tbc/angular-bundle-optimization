@@ -1,0 +1,12 @@
+<div class="page-container">
+  <h1>Transfers</h1>
+  <p>Here you can view and manage all your transfer transactions.</p>
+  <button class="action-button" (click)="newTransfer()">New Transfer</button>
+
+  <div class="transfer-list" *ngFor="let transfer of transfers">
+    <div class="transfer-item">
+      <span class="transfer-description">Transfer to {{ transfer.recipient }}</span>
+      <span class="transfer-amount">${{ transfer.amount }}</span>
+    </div>
+  </div>
+</div>
