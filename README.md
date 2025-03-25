@@ -7,10 +7,13 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 To start a local development server, run:
 
 ```bash
-ng serve
+nx serve eager - Start project with bad practice
+nx serve lazy - Start project with good practice
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Once the server is running, open your browser and navigate to `http://localhost:4200/` for project with bad practice, `http://localhost:4300/` for good practice.
+
+The application will automatically reload whenever you modify any of the source files.
 
 ## Code scaffolding
 
@@ -31,7 +34,8 @@ ng generate --help
 To build the project run:
 
 ```bash
-ng build
+nx build eager
+nx build lazy
 ```
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
