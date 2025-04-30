@@ -1,0 +1,12 @@
+<div class="page-container">
+  <h1>{{ 'LOANS.TITLE' | translate }}</h1>
+  <p>{{ 'LOANS.DESCRIPTION' | translate }}</p>
+
+  <div class="loan-list" *ngFor="let loan of loans(); trackBy: trackByFn">
+    <div class="loan-item">
+      <span class="loan-description">{{ 'LOANS.ITEMS.TYPE.' + loan.type | uppercase | translate }} - {{ loan.description }}</span>
+      <span class="loan-amount">${{ loan.amount }}</span>
+      <span class="loan-status">{{ 'LOANS.ITEMS.STATUS.' + loan.status | uppercase | translate }}</span>
+    </div>
+  </div>
+</div>
