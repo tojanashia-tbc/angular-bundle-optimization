@@ -1,0 +1,21 @@
+.listening-animation {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+
+.listening-text {
+  color: #f44336;
+  font-weight: bold;
+  animation: fadeBlink 1.2s infinite;
+}
+
+@keyframes fadeBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}

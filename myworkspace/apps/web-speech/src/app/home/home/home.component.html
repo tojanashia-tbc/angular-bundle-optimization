@@ -1,0 +1,23 @@
+<div class="home-container">
+  <header class="home-header">
+    <h1>{{ 'HOME.WELCOME' | translate }}</h1>
+    <p>{{ 'HOME.DESCRIPTION' | translate }}</p>
+  </header>
+
+  <section class="home-content">
+    <h2>{{ 'HOME.CONTENT.TITLE' | translate }}</h2>
+    <p>
+      {{ 'HOME.CONTENT.SUB.TITLE' | translate }}
+    </p>
+    <ul>
+      <li>{{ 'HOME.CONTENT.SRI' | translate }}</li>
+      <li>{{ 'HOME.CONTENT.TTS' | translate }}</li>
+      <li>{{ 'HOME.CONTENT.MULTI.LANGUAGE' | translate }}</li>
+    </ul>
+
+    <div class="cta-buttons">
+      <button (click)="navigateTo('transfers')" [appSpeak]="'NAV.TRANSFERS'">{{ 'NAV.TRANSFERS' | translate }}</button>
+      <button (click)="navigateTo('loans')" [appSpeak]="'NAV.LOANS'">{{ 'NAV.LOANS' | translate }}</button>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,71 @@
+<div class="new-transfer-container">
+  <div>
+    <a routerLink="/transfers" class="back-button"
+       [appSpeak]="'BACK.TO.TRANSFERS'">{{ 'BACK.TO.TRANSFERS' | translate }}</a>
+  </div>
+
+  <div class="new-transfer">
+    <h2>{{ 'TRANSFERS.NEW' | translate }}</h2>
+
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="amount">{{ 'TRANSFERS.AMOUNT' | translate }}</label>
+        <input
+          type="number"
+          id="amount"
+          name="amount"
+          [(ngModel)]="transfer.amount"
+          required
+          [appSpeak]="'AMOUNT.PLACEHOLDER'"
+          placeholder="{{'AMOUNT.PLACEHOLDER' | translate}}"
+          min="1"
+          step="any"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="recipient">{{ 'TRANSFERS.RECIPIENT'|translate }}</label>
+        <input
+          type="text"
+          id="recipient"
+          name="recipient"
+          [appSpeak]="'RECIPIENT.PLACEHOLDER'"
+          [(ngModel)]="transfer.recipient"
+          required
+          placeholder="{{'RECIPIENT.PLACEHOLDER' | translate}}"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="method">{{ 'TRANSFER.METHOD' | translate }}</label>
+        <select
+          id="method"
+          name="method"
+          [(ngModel)]="transfer.method"
+          (ngModelChange)="onChange($event)"
+          required
+          [appSpeak]="'SELECT.TRANSFER.METHOD'"
+        >
+          <option value="" disabled
+          >{{ 'SELECT.TRANSFER.METHOD' | translate }}
+          </option>
+          <option value="bank">{{ 'SELECT.BANK' | translate }}</option>
+          <option value="wallet">{{ 'SELECT.WALLET' | translate }}</option>
+          <option value="crypto">{{ 'SELECT.CRYPTO' | translate }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" [disabled]="!transfer.amount || !transfer.recipient || !transfer.method"
+                [appSpeak]="'SUBMIT.TRANSFER'"
+        >
+          {{ 'SUBMIT.TRANSFER'| translate }}
+        </button>
+      </div>
+    </form>
+
+    <div *ngIf="transferStatus" class="status-message">
+      <p>{{ transferStatus }}</p>
+    </div>
+  </div>
+</div>
